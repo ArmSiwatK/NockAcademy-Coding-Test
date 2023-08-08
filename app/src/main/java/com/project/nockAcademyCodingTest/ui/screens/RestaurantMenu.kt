@@ -1,4 +1,4 @@
-package com.project.nockAcademyCodingTest
+package com.project.nockAcademyCodingTest.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -31,6 +31,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import coil.compose.rememberImagePainter
+import com.project.nockAcademyCodingTest.data.model.MenuItem
+import com.project.nockAcademyCodingTest.data.model.RestaurantDetail
+import com.project.nockAcademyCodingTest.ui.components.RestaurantMenuItem
+import com.project.nockAcademyCodingTest.ui.components.RestaurantMenuPrice
 
 @Composable
 fun RestaurantMenu(arguments: String) {

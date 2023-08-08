@@ -1,4 +1,4 @@
-package com.project.nockAcademyCodingTest
+package com.project.nockAcademyCodingTest.ui.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -14,6 +14,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
+import com.project.nockAcademyCodingTest.data.model.Restaurant
 
 @Composable
 fun RestaurantListItem(restaurant: Restaurant) {

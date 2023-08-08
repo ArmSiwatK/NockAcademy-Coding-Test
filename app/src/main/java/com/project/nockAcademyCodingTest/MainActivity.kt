@@ -11,6 +11,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.project.nockAcademyCodingTest.ui.screens.RestaurantList
+import com.project.nockAcademyCodingTest.ui.screens.RestaurantMenu
 import com.project.nockAcademyCodingTest.ui.theme.StartingTheme
 
 class MainActivity : ComponentActivity() {

@@ -1,4 +1,4 @@
-package com.project.nockAcademyCodingTest
+package com.project.nockAcademyCodingTest.ui.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -26,6 +26,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import com.example.starting.R
+import com.project.nockAcademyCodingTest.data.model.MenuItem
 
 @Composable
 fun RestaurantMenuItem(

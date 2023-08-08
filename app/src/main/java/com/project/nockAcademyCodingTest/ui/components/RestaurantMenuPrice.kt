@@ -1,4 +1,4 @@
-package com.project.nockAcademyCodingTest
+package com.project.nockAcademyCodingTest.ui.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

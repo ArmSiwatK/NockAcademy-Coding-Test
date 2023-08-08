@@ -1,4 +1,4 @@
-package com.project.nockAcademyCodingTest
+package com.project.nockAcademyCodingTest.ui.screens
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -26,6 +26,8 @@ import androidx.navigation.NavController
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.Volley
+import com.project.nockAcademyCodingTest.data.model.Restaurant
+import com.project.nockAcademyCodingTest.ui.components.RestaurantListItem
 
 @Composable
 fun RestaurantList(navController: NavController) {
