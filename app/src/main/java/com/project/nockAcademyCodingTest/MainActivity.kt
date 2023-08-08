@@ -14,6 +14,7 @@ import androidx.navigation.navArgument
 import com.project.nockAcademyCodingTest.ui.theme.StartingTheme
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -24,15 +25,21 @@ class MainActivity : ComponentActivity() {
                 ) {
                     val navController = rememberNavController()
 
-                    NavHost(navController = navController, startDestination = "restaurantList") {
+                    NavHost(
+                        navController = navController,
+                        startDestination = "restaurantList"
+                    ) {
                         composable("restaurantList") {
                             RestaurantList(navController = navController)
                         }
                         composable(
                             "restaurantDetail/{restaurantId}",
-                            arguments = listOf(navArgument("restaurantId") { type = NavType.StringType })
+                            arguments = listOf(navArgument("restaurantId") {
+                                type = NavType.StringType
+                            })
                         ) { backStackEntry ->
-                            val restaurantId = backStackEntry.arguments?.getString("restaurantId")
+                            val restaurantId =
+                                backStackEntry.arguments?.getString("restaurantId")
                             restaurantId?.let {
                                 RestaurantMenu(arguments = it)
                             }
