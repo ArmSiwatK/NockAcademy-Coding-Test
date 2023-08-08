@@ -25,6 +25,7 @@ import com.android.volley.toolbox.Volley
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Divider
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -76,6 +77,13 @@ fun RestaurantMenu(arguments: String) {
     )
 
     requestQueue.add(jsonObjectRequest)
+
+    var selectedMenuItems by remember { mutableStateOf(listOf<MenuItem>()) }
+    var totalPrice by remember { mutableStateOf(0.0) }
+
+    LaunchedEffect(selectedMenuItems) {
+        totalPrice = selectedMenuItems.sumOf { it.price.toDoubleOrNull() ?: 0.0 }
+    }
 
     Column(
         modifier = Modifier
@@ -137,7 +145,24 @@ fun RestaurantMenu(arguments: String) {
                 }
             }
             items(restaurantDetail.menu) { menuItem ->
-                RestaurantMenuItem(menuItem)
+                val isSelected = selectedMenuItems.contains(menuItem)
+                RestaurantMenuItem(
+                    item = menuItem,
+                    isSelected = isSelected,
+                    onMenuItemClick = {
+                        selectedMenuItems = if (isSelected) {
+                            selectedMenuItems.filterNot { it == menuItem }
+                        } else {
+                            selectedMenuItems + menuItem
+                        }
+                    }
+                )
+            }
+
+            item {
+                if (selectedMenuItems.isNotEmpty()) {
+                    RestaurantMenuPrice(totalPrice = totalPrice)
+                }
             }
         }
     }
